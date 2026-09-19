@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Founder | AI (愛) Future You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#241c18',      
+                            card: '#362822',      
+                            primary: '#d97706',   
+                            accent: '#facc15',    
+                            light: '#fefcef',     
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #d97706, #facc15);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-brand-dark/90 backdrop-blur-md border-b border-orange-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo linking to home -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer hover:opacity-90 transition-opacity">
+                    <svg class="h-10 w-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 90C50 90 15 65 15 35C15 20 28 10 40 15C45 17 50 22 50 22C50 22 55 17 60 15C72 10 85 20 85 35C85 65 50 90 50 90Z" fill="url(#paint0_linear)" fill-opacity="0.15" stroke="#d97706" stroke-width="2"/>
+                        <circle cx="50" cy="45" r="4" fill="#facc15"/>
+                        <circle cx="35" cy="35" r="3" fill="#d97706"/>
+                        <circle cx="65" cy="35" r="3" fill="#d97706"/>
+                        <path d="M50 45L35 35M50 45L65 35" stroke="#facc15" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+                        <path d="M42 55C45 52 55 52 58 55" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M35 62H65" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="15" y1="10" x2="85" y2="90" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d97706"/>
+                                <stop offset="1" stop-color="#facc15"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="font-bold text-xl tracking-wide text-white">AI <span class="text-red-500">(愛)</span> Future You</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="index.html#vision" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Vision</a>
+                    <a href="index.html#technology" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Technology</a>
+                    <a href="about.html" class="text-sm font-medium text-brand-accent hover:text-white transition-colors">About Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-32 relative min-h-screen">
+        <!-- Background Grid -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#d9770608_1px,transparent_1px),linear-gradient(to_bottom,#d9770608_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+                    Meet Our Founder, <span class="gradient-text">Jun Miao</span>
+                </h1>
+                <div class="w-20 h-1 bg-brand-primary mt-4 rounded mx-auto"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Founder Photo -->
+                <div class="w-full lg:w-5/12">
+                    <div class="relative group">
+                        <!-- Decorative glowing background -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-brand-primary to-brand-accent rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                        <img 
+                            src="Profile_picture_1.jpeg" 
+                            alt="Jun Miao" 
+                            class="relative rounded-2xl shadow-[0_0_30px_rgba(217,119,6,0.3)] object-cover w-full max-w-md mx-auto border border-orange-900/30"
+                        >
+                    </div>
+                </div>
+
+                <!-- Founder Bio and Ambition -->
+                <div class="w-full lg:w-7/12">
+                    <div class="bg-brand-card/30 border border-brand-card rounded-3xl p-8 md:p-12 backdrop-blur-sm">
+                        
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            AI <span class="text-red-500">(愛)</span> Future You was founded by Jun Miao, whose career has been built at the frontier of AI-powered products—from computational photography and AI-driven imaging systems to on-device machine learning for AR/VR/XR devices at industry leaders like Meta and Apple. After over 15 years of turning cutting-edge AI research into foundational products used by millions, Jun set out to build something profoundly more personal.
+                        </p>
+                        
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            Having spent his career engineering how machines perceive the physical world, his ambition shifted toward how machines can understand human connection. He realized the next great technological leap isn't just about processing data faster—it's about creating technology that understands you.
+                        </p>
+
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            AI <span class="text-red-500">(愛)</span> Future You is Jun's vision for what comes next. It is the culmination of his hardware and machine learning expertise applied to creating empathetic digital twins. These intelligent agents are designed to grow and adapt alongside you, seamlessly representing your voice in daily communications, and ultimately evolving into a comforting, highly capable guide from your future.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark border-t border-brand-card pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <svg class="h-8 w-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 90C50 90 15 65 15 35C15 20 28 10 40 15C45 17 50 22 50 22C50 22 55 17 60 15C72 10 85 20 85 35C85 65 50 90 50 90Z" fill="#d97706" fill-opacity="0.2" stroke="#d97706" stroke-width="2"/>
+                            <circle cx="50" cy="45" r="4" fill="#facc15"/>
+                            <path d="M42 55C45 52 55 52 58 55" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="font-bold text-lg text-white">AI <span class="text-red-500">(愛)</span> Future You</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm leading-relaxed">
+                        Building the communication infrastructure of tomorrow through deeply personalized, compassionate agentic representation. 
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="about.html" class="hover:text-brand-accent transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Research</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Data Ethics</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-brand-card pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2026 AI (愛) Future You Inc. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

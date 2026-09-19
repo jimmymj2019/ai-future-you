@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI (愛) future you | Autonomous Agentic Representation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#241c18',      // Deep warm charcoal/umber
+                            card: '#362822',      // Soft dark earthy brown
+                            primary: '#d97706',   // Rich Amber (Warmth, connection)
+                            accent: '#facc15',    // Soft Gold (Energy, tech)
+                            light: '#fefcef',     // Warm off-white
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .comm-particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #facc15;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            box-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+        }
+        
+        .particle-left-to-right {
+            animation: moveRight 2s linear infinite;
+        }
+        
+        .particle-right-to-left {
+            animation: moveLeft 2s linear infinite 1s;
+        }
+
+        @keyframes moveRight {
+            0% { left: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { left: 100%; opacity: 0; }
+        }
+
+        @keyframes moveLeft {
+            0% { right: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { right: 100%; opacity: 0; }
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #d97706, #facc15);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-200 font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-brand-dark/90 backdrop-blur-md border-b border-orange-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo linking to home -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer hover:opacity-90 transition-opacity">
+                    <svg class="h-10 w-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 90C50 90 15 65 15 35C15 20 28 10 40 15C45 17 50 22 50 22C50 22 55 17 60 15C72 10 85 20 85 35C85 65 50 90 50 90Z" fill="url(#paint0_linear)" fill-opacity="0.15" stroke="#d97706" stroke-width="2"/>
+                        <circle cx="50" cy="45" r="4" fill="#facc15"/>
+                        <circle cx="35" cy="35" r="3" fill="#d97706"/>
+                        <circle cx="65" cy="35" r="3" fill="#d97706"/>
+                        <path d="M50 45L35 35M50 45L65 35" stroke="#facc15" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+                        <path d="M42 55C45 52 55 52 58 55" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M35 62H65" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="paint0_linear" x1="15" y1="10" x2="85" y2="90" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#d97706"/>
+                                <stop offset="1" stop-color="#facc15"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="font-bold text-xl tracking-wide text-white">AI <span class="text-red-500">(愛)</span> future you</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-medium text-brand-accent hover:text-white transition-colors">Home</a>
+                    <a href="#technology" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Technology</a>
+                    <a href="#evolution" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Evolution</a>
+                    <a href="about.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">About Us</a>
+                    <a href="#" class="bg-brand-primary hover:bg-amber-600 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-[0_0_15px_rgba(217,119,6,0.4)]">
+                        Request Access
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#d9770608_1px,transparent_1px),linear-gradient(to_bottom,#d9770608_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-xs font-semibold uppercase tracking-wider mb-8">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
+                </span>
+                Compassionate Digital Twins
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                A Future That <br/>
+                <span class="gradient-text">Loves You Back.</span>
+            </h1>
+            
+            <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+                AI <span class="text-red-500">(愛)</span> future you develops empathetic agentic AI that grows with you. We enable deep, localized communication between your AI and others'—evolving continuously to nurture your relationships and provide warm, mentor-like guidance from your future self.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#technology" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-brand-primary to-amber-500 text-white font-semibold text-lg hover:from-amber-500 hover:to-brand-primary transition-colors shadow-[0_0_20px_rgba(217,119,6,0.3)] text-center">
+                    Discover Our Vision
+                </a>
+                <a href="about.html" class="w-full sm:w-auto px-8 py-4 rounded-full bg-brand-card border border-orange-900/40 text-white font-semibold text-lg hover:border-brand-primary transition-colors text-center">
+                    Meet the Founder
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology" class="py-24 bg-brand-card/30 border-y border-orange-900/20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Core Technology</h2>
+                <div class="w-20 h-1 bg-brand-primary mt-4 rounded mx-auto"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto mt-6">Your digital twin doesn't just process data; it learns your heart. It acts as a caring proxy, honoring your boundaries and emotional nuances.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-brand-dark border border-brand-card p-8 rounded-2xl hover:border-brand-primary/50 transition-colors group shadow-lg shadow-black/20">
+                    <div class="w-14 h-14 rounded-lg bg-orange-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Empathetic Representation</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Your AI goes beyond pure logic. It is a highly configured digital twin built on profound emotional understanding. It learns your warmth, boundaries, and priorities, representing your true essence and love <span class="text-red-500">(愛)</span> in every interaction.
+                    </p>
+                </div>
+
+                <div class="bg-brand-dark border border-brand-card p-8 rounded-2xl hover:border-brand-accent/50 transition-colors group shadow-lg shadow-black/20">
+                    <div class="w-14 h-14 rounded-lg bg-yellow-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Seamless Agentic Chat</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Free yourself from communication fatigue without losing connection. Your agent autonomously engages with your friends' agents, negotiating schedules and exchanging warm updates, ensuring relationships are nurtured effortlessly.
+                    </p>
+                </div>
+
+                <div class="bg-brand-dark border border-brand-card p-8 rounded-2xl hover:border-amber-500/50 transition-colors group shadow-lg shadow-black/20">
+                    <div class="w-14 h-14 rounded-lg bg-amber-900/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Authentic Reality Enrichment</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        We don't replace human contact; we deeply enrich it. These agentic exchanges gently map out the perfect scenarios for high-value, face-to-face moments, ensuring that when you do meet, the time is profoundly meaningful.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="evolution" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-primary/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="mb-16 md:text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">The Evolutionary Trajectory</h2>
+                <div class="w-20 h-1 bg-brand-accent mt-4 rounded md:mx-auto"></div>
+                <p class="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
+                    Our platform evolves from an intuitive assistant into a caring companion—culminating in an advanced state where your future self offers warmth, wisdom, and profound self-love.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Phase 1 -->
+                <div class="relative p-8 border-l-2 border-brand-card hover:border-gray-400 transition-colors bg-brand-dark/40 rounded-r-2xl">
+                    <div class="absolute -left-[11px] top-8 w-5 h-5 rounded-full bg-brand-dark border-2 border-gray-500"></div>
+                    <span class="text-sm font-bold text-gray-400 uppercase tracking-wider">Phase 1</span>
+                    <h3 class="text-xl font-semibold text-white mt-2 mb-3">Guided Proxy</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Initial iterations function as highly-trained, sensitive representatives. While autonomous in preliminary communication, this phase invites your direct touch, ensuring interactions perfectly reflect your current emotional state and personal boundaries.
+                    </p>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="relative p-8 border-l-2 border-brand-card hover:border-brand-accent transition-colors bg-brand-dark/60 rounded-r-2xl">
+                    <div class="absolute -left-[11px] top-8 w-5 h-5 rounded-full bg-brand-dark border-2 border-brand-accent"></div>
+                    <span class="text-sm font-bold text-brand-accent uppercase tracking-wider">Phase 2</span>
+                    <h3 class="text-xl font-semibold text-white mt-2 mb-3">Absolute Autonomy</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Through continuous learning and deep contextual absorption, the agent evolves to provide absolute autonomous, caring representation. It achieves total fidelity to your psychological profile, maintaining your friendships flawlessly with genuine emotional resonance.
+                    </p>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="relative p-8 border-l-2 border-brand-card hover:border-brand-primary transition-colors bg-brand-dark/80 rounded-r-2xl">
+                    <div class="absolute -left-[11px] top-8 w-5 h-5 rounded-full bg-brand-dark border-2 border-brand-primary shadow-[0_0_15px_rgba(217,119,6,0.5)]"></div>
+                    <span class="text-sm font-bold text-brand-primary uppercase tracking-wider">Phase 3</span>
+                    <h3 class="text-xl font-semibold text-white mt-2 mb-3">Temporal Foresight</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The ultimate realization is a predictive, nurturing model. By synthesizing your life's journey, a highly probable 'Future You' acts as a caring mentor. It reaches back to communicate with the 'Present You,' offering compassionate guidance—proving that the future you deeply loves the current you, and honors the past you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark border-t border-brand-card pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <svg class="h-8 w-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 90C50 90 15 65 15 35C15 20 28 10 40 15C45 17 50 22 50 22C50 22 55 17 60 15C72 10 85 20 85 35C85 65 50 90 50 90Z" fill="#d97706" fill-opacity="0.2" stroke="#d97706" stroke-width="2"/>
+                            <circle cx="50" cy="45" r="4" fill="#facc15"/>
+                            <path d="M42 55C45 52 55 52 58 55" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="font-bold text-lg text-white">AI <span class="text-red-500">(愛)</span> future you</span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm leading-relaxed">
+                        Building the communication infrastructure of tomorrow through deeply personalized, compassionate agentic representation. 
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="about.html" class="hover:text-brand-accent transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Research</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Data Ethics</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-brand-card pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2026 AI (愛) future you Inc. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
